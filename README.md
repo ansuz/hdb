@@ -27,6 +27,10 @@ Eventually, it will be a part of a federated network of bots and httpds which:
   + ???
   + profit
 
+## Is it any good?
+
+[yes](https://news.ycombinator.com/item?id=3067434)
+
 ## I'm convinced, how do I install it
 
 It's written in nodejs, so download that first. If you're on Hyperboria, you probably have it already.
@@ -54,7 +58,4 @@ It should include:
 * etc
 
 but that's all still under development, don't worry about it for now.
-
-
-
 
