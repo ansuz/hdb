@@ -4,7 +4,8 @@
   "description": "the birth of the first hyperboria security company",
   "main": "index.js",
   "dependencies": {
-    "express": "^4.9.7"
+    "express": "^4.9.7",
+    "irc": "^0.3.7"
   },
   "devDependencies": {},
   "scripts": {
