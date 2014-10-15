@@ -1,3 +1,7 @@
+var bot = require("./lib/hiabot.js");
+
+bot.init(); // init the bot, duh
+
 var express = require("express"),
     app = express(),
     options = {
