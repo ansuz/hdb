@@ -17,7 +17,7 @@ It's meant to help you administrate your node. It features:
 
 Eventually, it will be a part of a federated network of bots and httpds which:
 
-* run **BHP™ ** (periodic pings to help identify which paths frequently experience the **Black Hole Routing** problem)
+* run **BHP™** (periodic pings to help identify which paths frequently experience the **Black Hole Routing** problem)
 * can be set to run nmap scans (on your neighbours or something, for security(?)).
 * serve up contact information about your node, if you want it to, like a facebook but for your node (or something).
 * provide general stats about:
