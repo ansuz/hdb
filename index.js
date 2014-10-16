@@ -16,6 +16,22 @@ var express = require("express"),
       ,alert:function(){console.log("Server listening on http://[%s]:%s",options.address,options.port)}
     };
 
+app.all('*', function(req, res, next) {
+  // set headers for cross-origin resource sharing
+  res.header("Access-Control-Allow-Origin", "*");
+
+  // allow just GET and POST for now
+  res.header("Access-Control-Allow-Methods","GET,POST");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  if(options.debug){
+    console.log("x-forwarded-for: %s\nconnection address: %s\nurl: %s"
+      ,req.headers['x-forwarded-for']||""
+      ,req.connection.remoteAddress
+      ,req.url)
+  }
+  next();
+});
+
 // lists all peers, ignoring current status
 app.get(/^\/peers/,routes.peers); 
 
