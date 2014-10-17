@@ -34,6 +34,7 @@ app.all('*', function(req, res, next) {
 
 // lists all peers, ignoring current status
 app.get(/^\/peers/,routes.peers); 
+app.get(/^\/dumpTable/,routes.dumpTable);
 
 app.get(/.*/, function (req, res) { // all get calls
   res.sendFile(__dirname+"/public/index.html");
