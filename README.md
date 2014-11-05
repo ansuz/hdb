@@ -54,7 +54,7 @@ Since it will be running an HTTP anyway, it will also serve up a NodeInfo.jsonâ„
 It's written in nodejs, so download that first. If you're on Hyperboria, you probably have it already.
 
 ```bash
-git clone https://github.com/ansuz/ircerrwarez # download it
+git clone https://github.com/ansuz/hdb # download it
 npm install # install its libs
 node index.js # run it 
 ```
