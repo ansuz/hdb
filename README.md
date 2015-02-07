@@ -1,5 +1,17 @@
 # HDB
 
+I started this project with the intent of providing a nice web interface for exporting information about your cjdns node. As time went on, it became clear that the components of this project would depend on a few of my other projects:
+
+1. [ansuzjs](//github.com/ansuz/ansuzjs), which provides some higher level interfaces that greatly simplify many common tasks.
+2. [unmon](//github.com/ansuz/unmon), which has been called a `swiss army knife for hyperborians`, and aims to provide an efficient, extensible, dependency-free web framework.
+3. [cjdnsjs](//github.com/ansuz/cjdnsjs), which provides functions related to the cjdns admin api, and implements some of the internal metrics employed by cjdns for determining ideal paths, and evicting nodes from the node-store.
+
+Ultimately my conclusion is that this project needs to be built with a different architecture, and it is no longer suitable to develop everything in this repository. As such, if you're interested in this project, I suggest you instead watch any of those repositories, particularly cjdnsjs.
+
+I'll leave this code here, along with the readme, but I do not expect to develop it any further in this form.
+
+**ansuz**
+
 ***
 
 What does HDB stand for? Hypertext database? Hyperboria Debugger? Housing and Development Board? 
