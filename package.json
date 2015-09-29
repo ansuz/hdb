@@ -1,14 +1,8 @@
 {
   "name": "hdb",
   "version": "0.0.0",
-  "description": "Hyperboria DataBase?",
+  "description": "Hyperboria Database?",
   "main": "index.js",
-  "dependencies":{
-    "agml":"git+https://github.com/ansuz/agmljs",
-     "kad": "git+https://github.com/ansuz/kad-ipv6",
-     "cjdnsjs":"git+https://github.com/ansuz/cjdnsjs",
-     "unmon":"git+https://github.com/ansuz/unmon",
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -27,5 +21,11 @@
   "bugs": {
     "url": "https://github.com/ansuz/hdb/issues"
   },
-  "homepage": "https://github.com/ansuz/hdb"
+  "homepage": "https://github.com/ansuz/hdb",
+  "dependencies": {
+    "agml": "git+https://github.com/ansuz/agmljs",
+    "cjdnsjs": "git+https://github.com/ansuz/cjdnsjs",
+    "kad": "git+https://github.com/ansuz/kad-ipv6",
+    "unmon": "0.0.10"
+  }
 }
