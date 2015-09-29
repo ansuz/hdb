@@ -1,24 +1,30 @@
 {
-  "name": "ircerrwarez",
+  "name": "hdb",
   "version": "0.0.0",
-  "description": "the birth of the first hyperboria security company",
+  "description": "Hyperboria DataBase?",
   "main": "index.js",
-  "dependencies": {
-    "express": "^4.9.7",
-    "irc": "^0.3.7"
+  "dependencies":{
+    "agml":"git+https://github.com/ansuz/agmljs",
+     "kad": "git+https://github.com/ansuz/kad-ipv6",
+     "cjdnsjs":"git+https://github.com/ansuz/cjdnsjs"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ansuz/ircerrwarez.git"
+    "url": "https://github.com/ansuz/hdb.git"
   },
-  "author": "",
-  "license": "AGPL3",
+  "keywords": [
+    "hyperboria",
+    "ipv6",
+    "cjdns",
+    "ansuz"
+  ],
+  "author": "ansuz",
+  "license": "GPL-3",
   "bugs": {
-    "url": "https://github.com/ansuz/ircerrwarez/issues"
+    "url": "https://github.com/ansuz/hdb/issues"
   },
-  "homepage": "https://github.com/ansuz/ircerrwarez"
+  "homepage": "https://github.com/ansuz/hdb"
 }
