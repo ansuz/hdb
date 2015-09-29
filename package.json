@@ -6,7 +6,8 @@
   "dependencies":{
     "agml":"git+https://github.com/ansuz/agmljs",
      "kad": "git+https://github.com/ansuz/kad-ipv6",
-     "cjdnsjs":"git+https://github.com/ansuz/cjdnsjs"
+     "cjdnsjs":"git+https://github.com/ansuz/cjdnsjs",
+     "unmon":"git+https://github.com/ansuz/unmon",
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
