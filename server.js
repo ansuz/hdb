@@ -11,6 +11,11 @@ Object.keys(hdb.api)
         unmon.route(new RegExp('^/'+key+'$'),hdb.api[key]);
     });
 
+unmon.route(/.*/,function(req,res){
+    res.statusCode=404;
+    res.end('404');    
+});
+
 var server=http.createServer(unmon.makeRouter(unmon.routes));
 
 server.listen(port,address,function(){
