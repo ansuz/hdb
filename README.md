@@ -18,7 +18,11 @@ More admin calls will be added in the future.
 
 ## What background tasks
 
-So far, none, but this is still a work in progress. In the future, you can expect it to take advantage of [my kad fork](https://github.com/ansuz/kad-ipv6) for sharing information with other nodes.
+HDB has a submodule (`lib/processes/census.js`), which will periodically recurse over your node's `pathFinderTree`. It bundles up the results, and passes them into a callback. The code needs some cleaning, and the API is quite likely to change.
+
+HDB has another submodule (`lib/memory.js`), which takes a level database as an argument, and returns some functions for getting and putting information to and from the db. This code is messy, and surely has bugs, but it seems to work well enough to deploy. Going forward, I'll clean this up and make it more efficient. In the meantime, I want to be able to deploy an instance of hdb to a node, and start collecting data.
+
+Future versions will add the capacity to cryptographically sign your node's findings, and push them into a [DHT](https://github.com/ansuz/kad-ipv6), probably supplemented with a more efficient gossip system.
 
 ## How do I install it?
 
@@ -38,11 +42,23 @@ node server.js
 
 Finally, you can visit your new server on your node's ipv6, port 64512.
 
+## How do I _un_install it
+
+`rm -rf hdb/`. Everything is stored in this folder.
+
 ## FAQ
+
+#### What api endpoints can I use?
+
+See [API.md](API.md) for a complete listing of all currently supported API endpoints.
 
 #### Why 64512? 
 
-because `0xfc00`.
+```
+$ node
+> 0xfc00
+64512
+```
 
 #### Why not 80?
 
