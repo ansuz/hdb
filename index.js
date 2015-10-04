@@ -12,11 +12,35 @@ var census=processes.census,
 
 var level=require("level");
 
-var remember=memory(level("./test.db"));
+var mis=require("mis");
 
-remember.on('newNode',function(ip){
+var en=mis();
+
+var remember=memory(level("./test.db"),en);
+
+// Set up your hooks
+///////////////////////////////////////////////////////////////////////////////
+en('newNode',function(ip){
     console.log("[%s] Found new ip: [%s]", new Date().toISOString(),ip);
 });
+
+// {msg,err,key,value}
+    // getError
+    // getSuccess
+    // putError
+    // putSuccess
+// {msg,key,value}
+    // updateSuccess
+// {err,value}
+    // undefinedUpdate
+// element
+    // newNode
+// visitor {ip, url}
+    en('visitor',function(vis){
+        console.log("We have a visitor: %s:%s",vis.ip,vis.url);
+    });
+
+///////////////////////////////////////////////////////////////////////////////
 
 process.on('uncaughtException',function(e){
     console.log(e);
@@ -36,7 +60,8 @@ var cancel=processes.census.schedulePoll(function(result){
 },5000);
 
 var hdb={
-    myfc:cjdns.myfc
+    myfc:cjdns.myfc,
+    en:en,
 };
 
 var fc=cjdns.myfc()[0];
