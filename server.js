@@ -15,7 +15,10 @@ var port=0xfc00;
 
 // report whenever someone visits
 unmon.route(/.*/,function(req,res,next){
-    console.log("We have a visitor: %s%s",req.connection.remoteAddress,req.url);
+    hdb.en('visitor')({
+        ip:req.connection.remoteAddress,
+        url:req.url,
+    });
     next();
 }); 
 
