@@ -28,6 +28,7 @@
     "cjdnsjs": "git+https://github.com/ansuz/cjdnsjs",
     "kad": "git+https://github.com/ansuz/kad-ipv6",
     "level": "^1.3.0",
+    "mis": "git+https://github.com/ansuz/mis",
     "request": "^2.64.0",
     "unmon": "git+https://github.com/ansuz/unmon"
   }
