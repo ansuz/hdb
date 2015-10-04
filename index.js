@@ -20,25 +20,42 @@ var remember=memory(level("./test.db"),en);
 
 // Set up your hooks
 ///////////////////////////////////////////////////////////////////////////////
-en('newNode',function(ip){
-    console.log("[%s] Found new ip: [%s]", new Date().toISOString(),ip);
-});
 
 // {msg,err,key,value}
     // getError
-    // getSuccess
+en('getError',function(res){
+    console.error('[%s] [GET ERROR] %s :: %s',getDate(), res.key, res.err);
+});
+
     // putError
+en('putError',function(res){
+    console.error('[%s] [PUT ERROR] %s :: %s',getDate(),res.key,res.err);
+});
+    // getSuccess
+en('getSuccess',function(res){
+//    console.log('[%s] [GET SUCCESS] %s',getDate(),res.key);
+// FIXME only knownNodes is using this so far?
+});
+
     // putSuccess
+
 // {msg,key,value}
     // updateSuccess
 // {err,value}
     // undefinedUpdate
+// Node
+    // nodeFetched
+
 // element
-    // newNode
+en('newNode',function(ip){
+    console.log("[%s] Found new ip: [%s]", getDate(),ip);
+});
+
 // visitor {ip, url}
-    en('visitor',function(vis){
-        console.log("We have a visitor: %s:%s",vis.ip,vis.url);
-    });
+en('visitor',function(vis){
+    console.log("[%s] We have a visitor: %s:%s", getDate(),vis.ip,vis.url);
+    // try pinging the user?
+});
 
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -51,8 +68,6 @@ var cancel=processes.census.schedulePoll(function(result){
     remember.ips(result.ips,function(all){
         // done callback?
     });
-//    remember.node(result);
-//    console.log(result.nodes);
     result.ips.forEach(function(ip){
         result.nodes[ip].lastSeen=result.date;
         remember.node(result.nodes[ip]);
@@ -170,6 +185,10 @@ var api=hdb.api={
     knownNodes:knownNodes,
     nodeCount:nodeCount,
     endPoints:endPoints,
+};
+
+function getDate(){
+    return new Date().toISOString();
 };
 
 module.exports=hdb;
