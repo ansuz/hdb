@@ -1,6 +1,6 @@
 # API
 
-++++
+====
 
 HDB only has one human readable page, currently (depending on your definition of human readable, other pages are `JSON`).
 
@@ -62,6 +62,7 @@ For the most up to date specifications of the `nodeinfo.json` format, see [the H
 ### /getNode
 
 * http://localhost:64512/getNode
+* http://localhost:64512/getNode/<cjdns ipv6>
 
 This a custom format, not one defined by cjdns internals, and as such it should be treated as being especially fragile. Currently, it returns an object with the following attributes (in no particular order):
 
