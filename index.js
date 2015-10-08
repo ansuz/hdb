@@ -1,3 +1,4 @@
+var fs=require("fs");
 var agml=require("agml");
 var kad =require("kad");
 var cjdns=require("cjdnsjs");
